@@ -1,0 +1,41 @@
+{
+    "name": "kuoka-multisig-workflow",
+    "version": "1.0.0",
+    "description": "Kuoka, tezos4africa multisig actions",
+    "scripts": {
+        "build": "tsc",
+        "misc": "ts-node src/misc.ts",
+        "initAccounts": "ts-node src/initAccounts.ts",
+        "deployMultisig": "ts-node src/deployMultisig.ts",
+        "transferBalance": "ts-node src/transferBalance.ts",
+        "transferToken": "ts-node src/transferToken.ts",
+        "rotateKeys": "ts-node src/rotateKeys.ts",
+
+        "transferIndexedToken": "node dist/transferIndexedToken.js",
+        "delegate": "node dist/delegate.js"
+    },
+    "author": "anonymoussprocket",
+    "license": "Apache2",
+    "engines": {
+        "node": ">=v16.14.2",
+        "npm": ">=8.5.0"
+    },
+    "homepage": "https://github.com/anonymoussprocket/KuokaMultisig",
+    "dependencies": {
+        "@types/node": "^18.0.3",
+        "@types/node-fetch": "2.6.2",
+        "@types/glob": "^7.2.0",
+        "big-integer": "^1.6.51",
+        "bignumber.js": "^9.0.2",
+        "conseiljs": "^5.1.0",
+        "conseiljs-softsigner": "^5.0.4-1",
+        "glob": "^8.0.3",
+        "jsonpath-plus": "^7.0.0",
+        "loglevel": "^1.8.0",
+        "node-fetch": "2.6.6"
+    },
+    "devDependencies": {
+        "ts-node": "^10.8.2",
+        "typescript": "^4.7.4"
+    }
+}

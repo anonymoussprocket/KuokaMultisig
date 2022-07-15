@@ -1,2 +1,41 @@
-# KuokaMultisig
-Multisig smart contract &amp; tools for the Kuoka Project
+# Kuoka Multisig Workflows
+
+## Intro
+
+This project in an implementation of a multisig contract for the [Kuoka Project](https://kuoka.org/) ([@KuokaProject](https://twitter.com/KuokaProject)). It is based on the [HoverLabs](https://twitter.com/HoverEng) [multisig-timelock contract](https://github.com/Hover-Labs/multisig-timelock). Modification were made to add the ability to directly manage an xtz coin balance and to set a delegate.
+
+Other code in this repository contains examples of how this contract can be used in several scenarios. It is using the [ConseilJS](https://www.npmjs.com/package/conseiljs) library from [Cryptonomic](https://github.com/Cryptonomic/ConseilJS). Smart contract is written using [SmartPy](https://smartpy.io/ide).
+
+## Deploy
+
+The code in this repository is not meant to be used in production directly. It is a collection of examples that can be integrated into a user-friend UI for the relevant multisig workflows. The included code can be used to demonstrate the functionality of the contract. To do so, several test accounts need to be created and the the base contract needs to be deployed. Token transfers, both plain (FA1.2) and indexed (FA2) will require a token balance to be assigned to the multisig contract.
+
+To deploy the contract use `npm run deployMultisig`.
+
+## Rotate Keys
+
+Using `npm run rotateKeys`
+
+## Delegate
+
+TBD
+
+## Transfer Balance
+
+Using `npm run transferBalance`
+
+## Transfer Tokens
+
+Using `npm run transferToken`
+
+## Transfer Indexed Tokens
+
+TBD
+
+## Initialize Test Accounts
+
+Test accounts can be created on [teztnets](https://teztnets.xyz/). Several will be needed to run a full test, including at least three for the signers and perhaps more for deployment and contribution testing.
+
+## Configuration Items
+
+`config.json` includes some required parameters. `node` is a Tezos RPC node for blockchain interactions. Currently it's using [Nautilus Cloud](https://nautilus.cloud/) from [Cryptonomic](https://twitter.com/CryptonomicTech). `accounts` is a list of tz1 Tezos accounts which will be interpreted as file names for the `/accounts` directory. tz1---.json is expected to be a faucet file from [teztnets](https://teztnets.xyz/). tz1---.keys is expected to be a JSON file containing two keys, `sk` and `pk`, secret and public key respectively. At a minimum this repo requires three accounts. The `multisig` section contains a `threshold`, which is set to two initially, that is a minimum number of signatures required to execute an operation and `timelock` – a number of seconds to wait before an operation can be executed, for testing it's set to 30 seconds. After a contract is deployed an `address` will be added to this section which the various test scripts in this repo will use to interact with the multisig.

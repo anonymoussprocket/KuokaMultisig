@@ -1,0 +1,13 @@
+{
+    "node": "https://tezos-ghostnet.cryptonomic-infra.tech",
+    "accounts": [
+        "tz1Nc3pRMt1NpNEorUuQdimTf47APo4TUSQf",
+        "tz1UF2AeR61FpMfnXkWG7vZCuHpH4mpuBxUm",
+        "tz1ZTqqCsSEoVXGoN75rNGMbGCzXewRmAmNf"
+    ],
+    "multisig": {
+        "threshold": 2,
+        "timelock": 30,
+        "address": "KT1WXx2gtvy2XoPBZUbLwy2qXWDiE9AjvF6f"
+    }
+}
