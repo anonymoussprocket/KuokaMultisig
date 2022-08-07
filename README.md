@@ -51,12 +51,12 @@ The following commands will deploy a multisig with two of three signers, the "de
 1. `npm i`
 1. `rm ./accounts/*`
 1. `echo "{\"sk\":\"<DEPLOYER_PRIVATE_KEY: edsk...>\",\"pk\":\"<DEPLOYER_PUBLIC_KEY: edpk...>\"}" > ./accounts/deployer.keys`
-1. `echo "{\"pk\":\"SIGNER1_PUBLIC_KEY: edpk...\"}" > ./accounts/signer1.keys`
-1. `echo "{\"pk\":\"SIGNER2_PUBLIC_KEY: edpk...\"}" > ./accounts/signer2.keys`
+1. `echo "{\"pk\":\"<SIGNER1_PUBLIC_KEY: edpk...>\"}" > ./accounts/signer1.keys`
+1. `echo "{\"pk\":\"<SIGNER2_PUBLIC_KEY: edpk...>\"}" > ./accounts/signer2.keys`
 1. `rm ./config.json`
 1. `echo "{ \"node\": \"https://tezos-prod.cryptonomic-infra.tech\", \"accounts\": [ \"deployer\", \"signer1\", \"signer2\" ], \"multisig\": { \"threshold\": 2, \"timelock\": 30 } }" > ./config.json`
 
 Using the contract deployed above these commands will queue a balance transfer operation. This process is described in [transferBalance.ts](./src/transferBalance.ts#L50). Accordingly, 0.1 XTZ will be transferred to the first signer in the config file, the account described in deployer.keys. Note that for this operation it's necessary to have the private key for the signer account.
 
-1. `echo "{\"sk\":\"<SIGNER1_PRIVATE_KEY: edsk...>\", \"pk\":\"SIGNER1_PUBLIC_KEY: edpk...\"}" > ./accounts/signer1.keys`
+1. `echo "{\"sk\":\"<SIGNER1_PRIVATE_KEY: edsk...>\", \"pk\":\"<SIGNER1_PUBLIC_KEY: edpk...>\"}" > ./accounts/signer1.keys`
 1. `npm run transferBalance`
