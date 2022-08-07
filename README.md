@@ -52,7 +52,7 @@ The following commands will deploy a multisig with two of three signers, the "de
 1. `rm ./accounts/*`
 1. `echo "{\"sk\":\"<DEPLOYER_PRIVATE_KEY: edsk...>\",\"pk\":\"<DEPLOYER_PUBLIC_KEY: edpk...>\"}" > ./accounts/deployer.keys`
 1. `echo "{\"pk\":\"SIGNER1_PUBLIC_KEY: edpk...\"}" > ./accounts/signer1.keys`
-1. `echo "{\"pk\":\"SIGNER1_PUBLIC_KEY: edpk...\"}" > ./accounts/signer2.keys`
+1. `echo "{\"pk\":\"SIGNER2_PUBLIC_KEY: edpk...\"}" > ./accounts/signer2.keys`
 1. `rm ./config.json`
 1. `echo "{ \"node\": \"https://tezos-prod.cryptonomic-infra.tech\", \"accounts\": [ \"deployer\", \"signer1\", \"signer2\" ], \"multisig\": { \"threshold\": 2, \"timelock\": 30 } }" > ./config.json`
 
