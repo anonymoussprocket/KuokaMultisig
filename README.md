@@ -42,6 +42,8 @@ Test accounts can be created on [teztnets](https://teztnets.xyz/). Several will 
 
 ## Quick Start
 
+*This section describes a quick &amp; dirty deployment of a multisig contract. This is not intended to be representative of best practices for key management.*
+
 The following commands will deploy a multisig with two of three signers, the "deployer" and "signer1" accounts and a 30 second time-lock duration. The deployer must have a private key available to sign the deployment transaction. Please take care to secure your private keys.
 
 1. `mkdir KuokaMultisig && cd ./KuokaMultisig`
