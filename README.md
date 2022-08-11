@@ -44,7 +44,7 @@ Test accounts can be created on [teztnets](https://teztnets.xyz/). Several will 
 
 *This section describes a quick &amp; dirty deployment of a multisig contract. This is not intended to be representative of best practices for key management.*
 
-The following commands will deploy a multisig with two of three signers, the "deployer" and "signer1" accounts and a 30 second time-lock duration. The deployer must have a private key available to sign the deployment transaction. Please take care to secure your private keys.
+The following commands will deploy a multisig with two of three signers, the "deployer", "signer1", "signer2" accounts and a 30 second time-lock duration. The deployer must have a private key available to sign the deployment transaction. The first item in the `accounts` list is used as the deployment account and mush have the private key in it. Please take care to secure your private keys.
 
 1. `mkdir KuokaMultisig && cd ./KuokaMultisig`
 1. `git clone https://github.com/anonymoussprocket/KuokaMultisig.git .`
@@ -55,6 +55,7 @@ The following commands will deploy a multisig with two of three signers, the "de
 1. `echo "{\"pk\":\"<SIGNER2_PUBLIC_KEY: edpk...>\"}" > ./accounts/signer2.keys`
 1. `rm ./config.json`
 1. `echo "{ \"node\": \"https://tezos-prod.cryptonomic-infra.tech\", \"accounts\": [ \"deployer\", \"signer1\", \"signer2\" ], \"multisig\": { \"threshold\": 2, \"timelock\": 30 } }" > ./config.json`
+1. `npm run deployMultisig`
 
 Using the contract deployed above these commands will queue a balance transfer operation. This process is described in [transferBalance.ts](./src/transferBalance.ts#L50). Accordingly, 0.1 XTZ will be transferred to the first signer in the config file, the account described in deployer.keys. Note that for this operation it's necessary to have the private key for the signer account.
 
